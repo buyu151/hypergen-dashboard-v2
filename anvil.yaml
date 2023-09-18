@@ -9,4 +9,13 @@ name: Hypergen Dashboard V2
 runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
 metadata: {title: Hypergen Product Selector, logo_img: 'asset:HyperGen-Logo-Icon-POS.png'}
 startup_form: Form1
+db_schema:
+  user_data:
+    client: none
+    server: full
+    columns:
+    - name: user_id
+      type: string
+      admin_ui: {width: 200, order: 0}
+    title: Table 1
 renamed: true

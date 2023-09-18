@@ -41,9 +41,9 @@ components:
       layout_properties: {grid_position: 'PSOENS,ZLNXPH'}
     - type: DropDown
       properties: {}
-      name: power_dd
+      name: dd_avg_power
       layout_properties: {grid_position: 'PSOENS,JOSUAW'}
-      event_bindings: {change: power_dd_change}
+      event_bindings: {change: dd_avg_power_change}
     - type: Label
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
         visible: true, text: Operational days, font_size: null, font: '', spacing_above: small,
@@ -53,9 +53,9 @@ components:
       layout_properties: {grid_position: 'PSOENS,HSEAFQ'}
     - type: DropDown
       properties: {}
-      name: op_days_dd
+      name: dd_days_year
       layout_properties: {grid_position: 'PSOENS,LSNORF'}
-      event_bindings: {change: op_days_dd_change}
+      event_bindings: {change: dd_days_year_change}
   - type: ColumnPanel
     properties: {col_widths: '{}'}
     name: column_panel_2
@@ -70,9 +70,9 @@ components:
       layout_properties: {grid_position: 'EVYCNA,ERZZXP'}
     - type: DropDown
       properties: {}
-      name: drop_down_3
+      name: dd_wind_speed
       layout_properties: {grid_position: 'EVYCNA,OGQFNS'}
-      event_bindings: {change: drop_down_3_change}
+      event_bindings: {change: dd_wind_speed_change}
     - type: Label
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
         visible: true, text: Fuel cost/£/l, font_size: null, font: '', spacing_above: small,
@@ -82,9 +82,9 @@ components:
       layout_properties: {grid_position: 'EVYCNA,ASYSUA'}
     - type: DropDown
       properties: {}
-      name: drop_down_4
+      name: dd_fuel_cost
       layout_properties: {grid_position: 'EVYCNA,CTECXQ'}
-      event_bindings: {change: drop_down_4_change}
+      event_bindings: {change: dd_fuel_cost_change}
   - type: ColumnPanel
     properties: {col_widths: '{}'}
     name: column_panel_3
@@ -99,9 +99,9 @@ components:
       layout_properties: {grid_position: 'UTNNKG,TFPRDJ'}
     - type: DropDown
       properties: {}
-      name: runt_time_dd
+      name: dd_run_time
       layout_properties: {grid_position: 'UTNNKG,STCNDM'}
-      event_bindings: {change: runt_time_dd_change}
+      event_bindings: {change: dd_run_time_change}
     - type: Label
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
         visible: true, text: 'Solar Irradiance
@@ -113,9 +113,9 @@ components:
       layout_properties: {grid_position: 'UTNNKG,ZVSHXZ'}
     - type: DropDown
       properties: {}
-      name: solar_irr_dd
+      name: dd_solar_irrad
       layout_properties: {grid_position: 'UTNNKG,OXKJFP'}
-      event_bindings: {change: solar_irr_dd_change}
+      event_bindings: {change: dd_solar_irrad_change}
   - type: ColumnPanel
     properties: {col_widths: '{}'}
     name: column_panel_4
@@ -132,9 +132,9 @@ components:
       layout_properties: {grid_position: 'JCCWHK,KJCIJG'}
     - type: DropDown
       properties: {}
-      name: electric_cost_dd
+      name: dd_elect_grid_cost
       layout_properties: {grid_position: 'JCCWHK,VZDMLX'}
-      event_bindings: {change: drop_down_7_change}
+      event_bindings: {change: dd_elect_grid_cost_change}
     - type: Label
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
         visible: true, text: "Energy cost increase (inflation) \n/%/year", font_size: null,
@@ -144,16 +144,17 @@ components:
       layout_properties: {grid_position: 'JCCWHK,WIOWXY'}
     - type: DropDown
       properties: {}
-      name: energy_inflation_dd
+      name: dd_energy_inflation
       layout_properties: {grid_position: 'JCCWHK,HATUGI'}
-      event_bindings: {change: drop_down_8_change}
+      event_bindings: {change: dd_energy_inflation_change}
   - type: Button
     properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: RUN, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: 'data:image/png;base64,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'}
-    name: button_1
+    name: button_run
     layout_properties: {grid_position: 'NZJTVU,VSVIFV'}
+    event_bindings: {click: button_run_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links
