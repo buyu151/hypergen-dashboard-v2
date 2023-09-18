@@ -1,8 +1,12 @@
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+package_name: Hypergen_Dashboard_V2
 allow_embedding: false
-package_name: M3_App_1
-name: M3 App 1
+name: Hypergen Dashboard V2
+runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
+metadata: {title: Hypergen Product Selector, logo_img: 'asset:HyperGen-Logo-Icon-POS.png'}
 startup_form: Form1
 renamed: true
-runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
-dependencies: []
-services: []
