@@ -124,7 +124,9 @@ class Form1(Form1Template):
         inputs["energy_inflation"] = self.dd_energy_inflation.selected_value
         inputs["cost_fuel"] = self.dd_fuel_cost.selected_value
 
-        anvil.server.call('run_calcs', inputs)
+        self.fig1 = anvil.server.call('run_calcs', inputs)
+
+        open_form('Form2')
 
         t_end = time.time()
         print(f'Done doing calculations in server in {t_end-t_begin} seconds')

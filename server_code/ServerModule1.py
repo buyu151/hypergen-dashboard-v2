@@ -141,6 +141,16 @@ def run_calcs(inputs):
             )
             for i in years
         ]
+        cumulative_cost["grid"] = [ (1 + year) * (total_power_comsumption * elect_grid_cost_selected *
+                                      (1 + year * (energy_inflation_selected/100))) for year in years]
+        cumulative_cost["year"] = years
     cumulative_cost_df = pd.DataFrame.from_dict(cumulative_cost)
     
     print(f"Cumulative costs \n {cumulative_cost_df} \n")
+    # -------------------------------------------------------------------------------------------------------------------------------
+    # Calculate cumulative costs   
+    
+    fig1 = px.line(cumulative_cost_df, x= "year", y= ["piston", "grid", "MGT", "HMGT", "solar", "wind"], text="year", title='Cumulative cost')
+    fig1.update_traces(textposition="bottom right")
+    
+    return fig1
