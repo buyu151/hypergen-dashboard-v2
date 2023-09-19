@@ -28,10 +28,6 @@ components:
     properties: {}
     name: plot_2
     layout_properties: {grid_position: 'UTOVMC,BJZZSZ'}
-- type: Spacer
-  properties: {height: 32}
-  name: spacer_1
-  layout_properties: {grid_position: 'WVFSQM,KYDSQW'}
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: column_panel_3
@@ -50,4 +46,24 @@ components:
     properties: {}
     name: plot_4
     layout_properties: {grid_position: 'VJZGAU,TEXZMX'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'YMIGKS,EEDHHX'}
+- type: FlowPanel
+  properties: {}
+  name: flow_panel_1
+  layout_properties: {grid_position: 'BHGFGQ,WHWLDC'}
+  components:
+  - type: Label
+    properties: {role: body, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'HMGT: Hypergen Micro Gas Turbine
+
+        DPG: Diesel Piston Generator
+
+        MGT: Micro Gas turbine', font_size: null, font: '', spacing_above: small,
+      icon_align: top, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: 'fa:commenting-o'}
+    name: label_1
+    layout_properties: {}
 is_package: true

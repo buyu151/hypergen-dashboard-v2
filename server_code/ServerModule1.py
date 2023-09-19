@@ -232,3 +232,10 @@ def pressed_button():
 @anvil.server.callable
 def delete_inputs_tmp():
     app_tables.inputs_tmp.delete_all_rows()
+
+# https://anvil.works/forum/t/getting-users-ip-address-in-an-app/146/8
+# @anvil.server.http_endpoint("/tools/:v")
+# def tools(v, **params):
+#     if v=="myip":
+#     # Return it or store it somewhere.
+#     return anvil.server.request.remote_address
