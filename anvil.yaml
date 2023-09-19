@@ -44,6 +44,12 @@ db_schema:
     - name: date_time
       admin_ui: {order: 9, width: 200}
       type: datetime
+    - name: country
+      admin_ui: {order: 10, width: 200}
+      type: string
+    - name: user_ip
+      type: string
+      admin_ui: {width: 200, order: 11}
     title: Table 1
   inputs_tmp:
     client: none

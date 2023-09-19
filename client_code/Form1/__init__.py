@@ -8,6 +8,7 @@ import plotly.graph_objects as go
 import time
 from datetime import datetime
 import anvil.http
+import json
 # from random import randint
 
 class Form1(Form1Template):
@@ -89,8 +90,9 @@ class Form1(Form1Template):
         self.user_id = anvil.server.call('get_uuid')
         print(f'User id is {self.user_id}')
         self.session_time = datetime.now()
-        # myip=anvil.http.request("https://<yourappid>.anvilapp.net/_/api/tools/myip")
-        # print(repr(a.get_bytes()))
+
+        self.country, self.user_ip = anvil.server.call('get_ip')
+        print(f"The user's country is {self.country}, from an ip address {self.user_ip}")
         
         #-----------------------------------------------------------------------------------------------------------
         #Upload inputs to server:
@@ -113,6 +115,8 @@ class Form1(Form1Template):
         inputs["cost_fuel"] = self.dd_fuel_cost.selected_value
         inputs["user_id"] = self.user_id
         inputs["date_time"] = self.session_time
+        inputs['country'] = self.country
+        inputs['user_ip'] = self.user_ip
 
         anvil.server.call('get_inputs', inputs)
 

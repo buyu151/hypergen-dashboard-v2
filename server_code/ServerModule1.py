@@ -7,6 +7,7 @@ from datetime import datetime
 import plotly.graph_objects as go
 import plotly.express as px
 import uuid
+import anvil.http
 
 # ----------------------------------------------------------------------------------------------------------------------------------
 #Get user id for session 
@@ -58,8 +59,11 @@ def get_inputs(inputs_val):
                                 avg_wind_speed=inputs["avg_wind_speed"],
                                 run_time=inputs["run_time"],
                                 user_id=inputs["user_id"],
-                                date_time=inputs["date_time"]
+                                date_time=inputs["date_time"],
+                                country=inputs['country'],
+                                user_ip=inputs['user_ip']
                                       )
+    
     row = app_tables.inputs_tmp.add_row(avg_pwr=inputs["avg_pwr"],
                             days_op_per_year=inputs["days_op_per_year"],
                             cost_fuel=inputs["cost_fuel"],
@@ -229,5 +233,12 @@ def delete_inputs_tmp():
 # @anvil.server.http_endpoint("/tools/:v")
 # def tools(v, **params):
 #     if v=="myip":
-#     # Return it or store it somewhere.
-#     return anvil.server.request.remote_address
+#         return anvil.server.request.remote_address
+
+# https://anvil.works/docs/server/call-context
+# https://anvil.works/forum/t/getting-users-ip-address-in-an-app/146/14
+@anvil.server.callable
+def get_ip():
+    country = anvil.server.context.client.location.country 
+    ip_addres = anvil.server.context.client.ip
+    return country, ip_addres
