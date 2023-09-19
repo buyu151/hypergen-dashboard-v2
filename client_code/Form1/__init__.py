@@ -15,8 +15,8 @@ class Form1(Form1Template):
         self.init_components(**properties)
 
         # Any code you write here will run before the form opens.
-
-     #-----------------------------------------------------------------------------------------------------------
+        
+        #-----------------------------------------------------------------------------------------------------------
         #Variables drop down menus:
 
         t_begin = time.time()
@@ -81,9 +81,10 @@ class Form1(Form1Template):
         """This method is called when the button is clicked"""
 
         #-----------------------------------------------------------------------------------------------------------
-        #Get user id
+        #Get user id and time
         self.user_id = anvil.server.call('get_uuid')
         print(f'User id is {self.user_id}')
+        self.session_time = datetime.now()
         
         #-----------------------------------------------------------------------------------------------------------
         #Upload inputs to server:
@@ -94,25 +95,6 @@ class Form1(Form1Template):
 
         t_begin = time.time()
 
-        anvil.server.call('get_inputs',
-                          self.dd_avg_power.selected_value,
-                          self.dd_run_time.selected_value,
-                          self.dd_days_year.selected_value,
-                          self.dd_solar_irrad.selected_value,
-                          self.dd_wind_speed.selected_value,
-                          self.dd_elect_grid_cost.selected_value,
-                          self.dd_energy_inflation.selected_value,
-                          self.dd_fuel_cost.selected_value,
-                          self.user_id
-                         )
-
-
-        t_end = time.time()
-        print(f'Done uploading inputs to server in {t_end-t_begin} seconds')
-        #-----------------------------------------------------------------------------------------------------------
-        #Runcalculations server:
-        t_begin = time.time()
-        
         inputs ={}
 
         inputs["avg_pwr"] = self.dd_avg_power.selected_value
@@ -123,10 +105,20 @@ class Form1(Form1Template):
         inputs["cost_electric"] = self.dd_elect_grid_cost.selected_value
         inputs["energy_inflation"] = self.dd_energy_inflation.selected_value
         inputs["cost_fuel"] = self.dd_fuel_cost.selected_value
+        inputs["user_id"] = self.user_id
+        inputs["date_time"] = self.session_time
 
-        self.fig1 = anvil.server.call('run_calcs', inputs)
+        anvil.server.call('get_inputs', inputs)
 
-        open_form('Form2')
+        t_end = time.time()
+        
+        print(f'Done uploading inputs to server in {t_end-t_begin} seconds')
+        #-----------------------------------------------------------------------------------------------------------
+        #Runcalculations server:
+        
+        t_begin = time.time()
+
+        Form1.fig1, Form1.fig2, Form1.fig3, Form1.fig4 = anvil.server.call('pressed_button')
 
         t_end = time.time()
         print(f'Done doing calculations in server in {t_end-t_begin} seconds')
@@ -135,68 +127,8 @@ class Form1(Form1Template):
 
         print(f"Total run time {t_end_total-t_begin_total} seconds")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+        anvil.server.call('delete_inputs_tmp')
+        open_form('Form2')
 
     def dd_avg_power_change(self, **event_args):
         """This method is called when an item is selected"""
@@ -229,6 +161,11 @@ class Form1(Form1Template):
     def dd_energy_inflation_change(self, **event_args):
         """This method is called when an item is selected"""
         pass
+
+    def link_1_show(self, **event_args):
+        """This method is called when the Link is shown on the screen"""
+        pass
+
 
 
 

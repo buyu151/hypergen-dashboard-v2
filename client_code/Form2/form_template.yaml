@@ -10,28 +10,6 @@ components:
   name: button_1
   layout_properties: {grid_position: 'IPTSVM,WDWWFI'}
   event_bindings: {click: button_1_click}
-- type: Spacer
-  properties: {height: 32}
-  name: spacer_2
-  layout_properties: {grid_position: 'ZHLWZU,XGVGSK'}
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: column_panel_6
-  layout_properties: {grid_position: 'YMFDHX,MPGSFN'}
-  components:
-  - type: Label
-    properties: {}
-    name: label_3
-    layout_properties: {grid_position: 'XMWWUG,PLNOIN'}
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: column_panel_7
-  layout_properties: {grid_position: 'YMFDHX,QEQQCE'}
-  components:
-  - type: Label
-    properties: {}
-    name: label_4
-    layout_properties: {grid_position: 'QYWRFA,JMLFZB'}
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: column_panel_1
@@ -54,24 +32,6 @@ components:
   properties: {height: 32}
   name: spacer_1
   layout_properties: {grid_position: 'WVFSQM,KYDSQW'}
-- type: FlowPanel
-  properties: {}
-  name: flow_panel_1
-  layout_properties: {grid_position: 'LIYCJY,QZXFKR'}
-  components:
-  - type: Label
-    properties: {}
-    name: label_1
-    layout_properties: {}
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: column_panel_5
-  layout_properties: {grid_position: 'LIYCJY,QBMBIU'}
-  components:
-  - type: Label
-    properties: {}
-    name: label_2
-    layout_properties: {grid_position: 'NPTRJX,BCYDUD'}
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: column_panel_3

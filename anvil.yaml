@@ -17,5 +17,61 @@ db_schema:
     - name: user_id
       type: string
       admin_ui: {width: 200, order: 0}
+    - name: days_op_per_year
+      type: string
+      admin_ui: {width: 200, order: 1}
+    - name: cost_fuel
+      type: string
+      admin_ui: {width: 200, order: 2}
+    - name: cost_electric
+      type: string
+      admin_ui: {width: 200, order: 3}
+    - name: avg_pwr
+      type: string
+      admin_ui: {width: 200, order: 4}
+    - name: energy_inflation
+      type: string
+      admin_ui: {width: 200, order: 5}
+    - name: avg_solar_irr
+      type: string
+      admin_ui: {width: 200, order: 6}
+    - name: avg_wind_speed
+      type: string
+      admin_ui: {width: 200, order: 7}
+    - name: run_time
+      type: string
+      admin_ui: {width: 200, order: 8}
+    - name: date_time
+      admin_ui: {order: 9, width: 200}
+      type: datetime
     title: Table 1
+  inputs_tmp:
+    client: none
+    server: full
+    columns:
+    - name: days_op_per_year
+      type: string
+      admin_ui: {width: 200, order: 0}
+    - name: cost_fuel
+      type: string
+      admin_ui: {width: 200, order: 1}
+    - name: cost_electric
+      type: string
+      admin_ui: {width: 200, order: 2}
+    - name: avg_pwr
+      type: string
+      admin_ui: {width: 200, order: 3}
+    - name: energy_inflation
+      type: string
+      admin_ui: {width: 200, order: 4}
+    - name: avg_solar_irr
+      type: string
+      admin_ui: {width: 200, order: 5}
+    - name: avg_wind_speed
+      type: string
+      admin_ui: {width: 200, order: 6}
+    - name: run_time
+      type: string
+      admin_ui: {width: 200, order: 7}
+    title: Table 2
 renamed: true
