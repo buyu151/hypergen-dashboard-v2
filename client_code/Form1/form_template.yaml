@@ -34,7 +34,7 @@ components:
     components:
     - type: Label
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: Power/kW, font_size: null, font: '', spacing_above: small,
+        visible: true, text: Generator size (kW), font_size: null, font: '', spacing_above: small,
         icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
         underline: false, icon: ''}
       name: label_1
@@ -63,9 +63,9 @@ components:
     components:
     - type: Label
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: Wind speed/m/s, font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-        underline: false, icon: ''}
+        visible: true, text: Average Wind speed (m/s), font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: true, underline: false, icon: ''}
       name: label_3
       layout_properties: {grid_position: 'EVYCNA,ERZZXP'}
     - type: DropDown
@@ -75,7 +75,7 @@ components:
       event_bindings: {change: dd_wind_speed_change}
     - type: Label
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: Fuel cost/£/l, font_size: null, font: '', spacing_above: small,
+        visible: true, text: Fuel cost (£/l), font_size: null, font: '', spacing_above: small,
         icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
         underline: false, icon: ''}
       name: label_4
@@ -92,7 +92,7 @@ components:
     components:
     - type: Label
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: Run time/h, font_size: null, font: '', spacing_above: small,
+        visible: true, text: Run time (h), font_size: null, font: '', spacing_above: small,
         icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
         underline: false, icon: ''}
       name: label_5
@@ -104,9 +104,9 @@ components:
       event_bindings: {change: dd_run_time_change}
     - type: Label
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: 'Solar Irradiance
+        visible: true, text: 'Average Solar Irradiance
 
-          /kWh/m2', font_size: null, font: '', spacing_above: small, icon_align: left,
+          (kWh/m2)', font_size: null, font: '', spacing_above: small, icon_align: left,
         spacing_below: small, italic: false, background: '', bold: true, underline: false,
         icon: ''}
       name: label_6
@@ -125,7 +125,7 @@ components:
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
         visible: true, text: 'Electric cost (grid)
 
-          £/kWh', font_size: null, font: '', spacing_above: small, icon_align: left,
+          (£/kWh)', font_size: null, font: '', spacing_above: small, icon_align: left,
         spacing_below: small, italic: false, background: '', bold: true, underline: false,
         icon: ''}
       name: label_7
@@ -137,8 +137,8 @@ components:
       event_bindings: {change: dd_elect_grid_cost_change}
     - type: Label
       properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: "Energy cost increase (inflation) \n/%/year", font_size: null,
-        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        visible: true, text: Energy inflation (%/year), font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
         background: '', bold: true, underline: false, icon: ''}
       name: Energy_cost_panel
       layout_properties: {grid_position: 'JCCWHK,WIOWXY'}
@@ -155,6 +155,26 @@ components:
     name: button_run
     layout_properties: {grid_position: 'NZJTVU,VSVIFV'}
     event_bindings: {click: button_run_click}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_4
+    layout_properties: {grid_position: 'XJQZUJ,HAAXWX'}
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_1
+    layout_properties: {grid_position: 'VEKPJZ,MHDCKW'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'NOTE: Solar radiation can be categorized into four classes:
+          levels less than 2.6 kWh/m2 are classified as low solar radiation while
+          solar irradiance between 2.6-3 kWh/m2 is moderate solar radiation; irradiance
+          of between 3-4 kWh/m2 is high solar radiation and irradiance higher than
+          4 kWh/m2 is very high radiation.', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_8
+      layout_properties: {}
 - type: FlowPanel
   properties: {}
   name: navbar_links

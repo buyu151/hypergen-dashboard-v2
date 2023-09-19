@@ -62,9 +62,10 @@ class Form1(Form1Template):
         self.dd_elect_grid_cost.selected_value = '0.34' #Default value
         # print(f'Electric grid cost\n{self.elect_grid_cost}\n')
 
-        self.energy_inflation = [ str(item) for item in range(10, 101, 10)]
+        self.energy_inflation = [ '1', '2', '3', '4', '5', '6', '7', '8', '9']
+        self.energy_inflation = self.energy_inflation + [str(item) for item in range(10, 101, 10)]
         self.dd_energy_inflation.items = self.energy_inflation
-        self.dd_energy_inflation.selected_value = '30' #Default value
+        self.dd_energy_inflation.selected_value = '2' #Default value
         # print(f'Energy inflation\n{self.energy_inflation}\n')
 
         t_end = time.time()

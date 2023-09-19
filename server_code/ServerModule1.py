@@ -76,14 +76,6 @@ def build_dfs(inputs):
     cumulative_cost_df, capital_costs_df_long = run_calcs(inputs, generators, cost_factor, generator_costs, generator_efficiency)
     return cumulative_cost_df, capital_costs_df_long
 
-# @anvil.server.callable
-# def reset_inputs():
-#     inputs.clear()
-
-# @anvil.server.callable
-# def run_dashboard(inputs):
-#     run_calcs(inputs)
-
 @anvil.server.callable
 def run_calcs(inputs, generators, cost_factor, generator_costs, generator_efficiency):
     
