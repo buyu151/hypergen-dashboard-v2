@@ -82,6 +82,8 @@ class Form1(Form1Template):
         
         """This method is called when the button is clicked"""
 
+        
+
         #-----------------------------------------------------------------------------------------------------------
         #Get user id and time
         self.user_id = anvil.server.call('get_uuid')
@@ -132,7 +134,9 @@ class Form1(Form1Template):
         print(f"Total run time {t_end_total-t_begin_total} seconds")
 
         anvil.server.call('delete_inputs_tmp')
+
         open_form('Form2')
+        
 
     def dd_avg_power_change(self, **event_args):
         """This method is called when an item is selected"""
