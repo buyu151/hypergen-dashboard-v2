@@ -87,19 +87,25 @@ class Form1(Form1Template):
 
         #-----------------------------------------------------------------------------------------------------------
         #Get user id and time
+
+        self.session_time = datetime.now()
+
+        t_begin_total = time.time()
+
+        t_begin = time.time()
+        
         self.user_id = anvil.server.call('get_uuid')
         print(f'User id is {self.user_id}')
         self.session_time = datetime.now()
 
         self.country, self.user_ip = anvil.server.call('get_ip')
         print(f"The user's country is {self.country}, from an ip address {self.user_ip}")
+
+        t_end = time.time()
+        print(f'Done getting user data in {t_end-t_begin} seconds')
         
         #-----------------------------------------------------------------------------------------------------------
         #Upload inputs to server:
-
-        self.session_time = datetime.now()
-
-        t_begin_total = time.time()
 
         t_begin = time.time()
 
