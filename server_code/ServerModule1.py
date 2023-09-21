@@ -242,3 +242,5 @@ def get_ip():
     country = anvil.server.context.client.location.country 
     ip_addres = anvil.server.context.client.ip
     return country, ip_addres
+
+# https://anvil.works/forum/t/sharing-data-tables-between-apps/4738/2
