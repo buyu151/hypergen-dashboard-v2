@@ -25,7 +25,7 @@ class Form1(Form1Template):
         
         self.avg_power = ['20', '30', '40', '60', '75', '100', '125', '135', '150', '175', '200']
         self.dd_avg_power.items = self.avg_power #dd for drop down menue
-        self.dd_avg_power.selected_value = '30' #Default value in drop down menue
+        self.dd_avg_power.selected_value = '20' #Default value in drop down menue
         # print(f'Average power\n{self.avg_power}\n')
         
         self.run_time = [ str(item) for item in range(1, 24+1) ]
@@ -55,18 +55,18 @@ class Form1(Form1Template):
         
         self.fuel_cost = [str(1 + (item/10)) for item in range(0, 11) ]
         self.dd_fuel_cost.items = self.fuel_cost
-        self.dd_fuel_cost.selected_value = '1.0' #Default value
+        self.dd_fuel_cost.selected_value = '1.5' #Default value
         # print(f'Average fuel cost\n{self.fuel_cost}\n')
         
         self.elect_grid_cost = [str(round((3 + (item/10))/10, 2)) for item in range(4, 70)]
         self.dd_elect_grid_cost.items = self.elect_grid_cost
-        self.dd_elect_grid_cost.selected_value = '0.34' #Default value
+        self.dd_elect_grid_cost.selected_value = '0.36' #Default value
         # print(f'Electric grid cost\n{self.elect_grid_cost}\n')
 
         self.energy_inflation = [ '1', '2', '3', '4', '5', '6', '7', '8', '9']
         self.energy_inflation = self.energy_inflation + [str(item) for item in range(10, 101, 10)]
         self.dd_energy_inflation.items = self.energy_inflation
-        self.dd_energy_inflation.selected_value = '2' #Default value
+        self.dd_energy_inflation.selected_value = '3' #Default value
         # print(f'Energy inflation\n{self.energy_inflation}\n')
 
         t_end = time.time()
