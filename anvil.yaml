@@ -15,8 +15,8 @@ db_schema:
     server: full
     columns:
     - name: user_id
+      admin_ui: {order: 0, width: 200}
       type: string
-      admin_ui: {width: 200, order: 0}
     - name: days_op_per_year
       type: string
       admin_ui: {width: 200, order: 1}
