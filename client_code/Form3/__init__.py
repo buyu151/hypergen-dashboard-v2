@@ -22,7 +22,7 @@ class Form3(Form3Template):
         anvil.server.call('add_feedback', name, email,company, feedback)
         Notification("Feedback submitted!").show()
         self.clear_inputs()
-        time.sleep(3) # Sleep for 3 seconds
+        time.sleep(2) # Sleep for 2 seconds
         open_form('Form1')
 
     def clear_inputs(self):
