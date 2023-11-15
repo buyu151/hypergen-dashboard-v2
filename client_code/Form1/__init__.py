@@ -106,6 +106,8 @@ class Form1(Form1Template):
 
         t_end = time.time()
         print(f'Done getting user data in {t_end-t_begin} seconds')
+
+        Notification("Have you seen Sarah Connor?, I'll be back! Please wait :-)").show()
         
         #-----------------------------------------------------------------------------------------------------------
         #Upload inputs to server:
@@ -149,6 +151,8 @@ class Form1(Form1Template):
         t_end_total = time.time()
 
         print(f"Total run time {t_end_total-t_begin_total} seconds")
+
+
 
         anvil.server.call('delete_inputs_tmp')
 
