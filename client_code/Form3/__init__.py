@@ -20,7 +20,7 @@ class Form3(Form3Template):
         company = self.company_box.text
         feedback = self.feedback_box.text
         anvil.server.call('add_feedback', name, email,company, feedback)
-        Notification("Feedback submitted!").show()
+        Notification("Feedback submitted! Thank you for your interest. We will be in touch shortly.").show()
         self.clear_inputs()
         time.sleep(2) # Sleep for 2 seconds
         open_form('Form1')
@@ -30,3 +30,9 @@ class Form3(Form3Template):
         self.email_box.text = ""
         self.company_box.text = ""
         self.feedback_box.text = ""
+
+    def return_button_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        open_form('Form1')
+
+    

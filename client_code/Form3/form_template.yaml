@@ -51,4 +51,9 @@ components:
     properties: {}
     type: TextArea
     layout_properties: {grid_position: 'AWRQKN,MOPEQB'}
+  - name: return_button
+    properties: {text: Return to Dashboard}
+    type: Button
+    layout_properties: {grid_position: 'RVOGGY,EZCOZI'}
+    event_bindings: {click: return_button_click}
 is_package: true
