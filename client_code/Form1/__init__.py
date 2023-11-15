@@ -84,7 +84,10 @@ class Form1(Form1Template):
         """This method is called when the button is clicked"""
 
         
-
+        Notification("Important math happening! Please wait :-)").show()
+        
+       
+        
         #-----------------------------------------------------------------------------------------------------------
         #Get user id and time
 
@@ -129,6 +132,8 @@ class Form1(Form1Template):
         t_end = time.time()
         
         print(f'Done uploading inputs to server in {t_end-t_begin} seconds')
+
+        Notification("What Is the Airspeed Velocity of an Unladen Swallow? Please wait :-)").show()
         #-----------------------------------------------------------------------------------------------------------
         #Runcalculations server:
         
@@ -139,11 +144,15 @@ class Form1(Form1Template):
         t_end = time.time()
         print(f'Done doing calculations in server in {t_end-t_begin} seconds')
 
+        Notification("Meaning of life is 42! Please wait :-)").show()
+
         t_end_total = time.time()
 
         print(f"Total run time {t_end_total-t_begin_total} seconds")
 
         anvil.server.call('delete_inputs_tmp')
+
+        
 
         open_form('Form2')
         
