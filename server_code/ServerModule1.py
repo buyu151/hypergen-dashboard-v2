@@ -1,3 +1,4 @@
+import anvil.email
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
@@ -244,3 +245,32 @@ def get_ip():
     return country, ip_addres
 
 # https://anvil.works/forum/t/sharing-data-tables-between-apps/4738/2
+
+#-------------------------------------------------------------------------------------------------------------------------------
+#Contact email form
+# https://anvil.works/learn/tutorials/feedback-form/chapter-1
+# https://anvil.works/docs/email/quickstart
+
+#Add feedback to app table
+@anvil.server.callable
+def add_feedback(name, email,company, feedback):
+  app_tables.feedback.add_row(
+    name=name, 
+    email=email,
+    company=company,
+    feedback=feedback, 
+    created=datetime.now()
+  )
+    
+# Send yourself an email each time feedback is submitted
+  anvil.email.send(to="info@hypergen.co.uk", 
+                   subject="Feedback from {}".format(name),
+                   text="""
+  A new person has filled out the feedback form!
+
+  Name: {}
+  Email address: {}
+  Company: {}
+  Feedback:
+  {}
+  """.format(name, email, company, feedback))

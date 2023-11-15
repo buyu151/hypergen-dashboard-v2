@@ -3,6 +3,9 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
+- source: /runtime/services/anvil/email.yml
+  client_config: {}
+  server_config: {}
 package_name: Hypergen_Dashboard_V2
 allow_embedding: false
 name: Hypergen Dashboard V2
@@ -80,4 +83,24 @@ db_schema:
       type: string
       admin_ui: {width: 200, order: 7}
     title: Table 2
+  feedback:
+    client: none
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: email
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: company
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: feedback
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: created
+      admin_ui: {width: 200, order: 4}
+      type: datetime
+    title: Table 3
 renamed: true

@@ -1,0 +1,54 @@
+container: {type: ColumnPanel}
+components:
+- name: spacer_1
+  properties: {height: 32}
+  type: Spacer
+  layout_properties: {grid_position: 'BOZIPC,LHCYJB'}
+- name: column_panel_2
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'WJWJVI,BSCSIV'}
+  components:
+  - name: submit_button
+    properties: {text: Submit, role: outlined-button}
+    type: Button
+    layout_properties: {grid_position: 'KXNAJI,DNKPOG'}
+    event_bindings: {click: outlined_button_1_click}
+- name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'BRKTYL,BSNAVV'}
+  components:
+  - name: label_1
+    properties: {text: Name}
+    type: Label
+    layout_properties: {grid_position: 'ACXNNM,ZXUHTK ZOOZSH,IBRMBY'}
+  - name: name_box
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'ACXNNM,NAVQBJ'}
+  - name: label_2
+    properties: {text: Company name}
+    type: Label
+    layout_properties: {grid_position: 'VWCWRI,JCDBPT TKUNJH,TXMEXH'}
+  - name: label_4
+    properties: {text: Contact email}
+    type: Label
+    layout_properties: {grid_position: 'VWCWRI,JCDBPT XHMGEZ,DAHVWF'}
+  - name: company_box
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'VWCWRI,YATXSR RPMYOH,SCMPOW'}
+  - name: email_box
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'VWCWRI,YATXSR NXHONY,BBVYJH'}
+  - name: label_3
+    properties: {text: Message}
+    type: Label
+    layout_properties: {grid_position: 'WTXHCS,KTYTFT'}
+  - name: feedback_box
+    properties: {}
+    type: TextArea
+    layout_properties: {grid_position: 'AWRQKN,MOPEQB'}
+is_package: true
