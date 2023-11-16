@@ -22,7 +22,7 @@ components:
   - name: label_1
     properties: {text: Name}
     type: Label
-    layout_properties: {grid_position: 'ACXNNM,ZXUHTK ZOOZSH,IBRMBY'}
+    layout_properties: {grid_position: 'PYNWFV,GSSSAS'}
   - name: name_box
     properties: {}
     type: TextBox
@@ -30,19 +30,19 @@ components:
   - name: label_2
     properties: {text: Company name}
     type: Label
-    layout_properties: {grid_position: 'VWCWRI,JCDBPT TKUNJH,TXMEXH'}
-  - name: label_4
-    properties: {text: Contact email}
-    type: Label
-    layout_properties: {grid_position: 'VWCWRI,JCDBPT XHMGEZ,DAHVWF'}
+    layout_properties: {grid_position: 'IXLJHB,WZRBES'}
   - name: company_box
     properties: {}
     type: TextBox
-    layout_properties: {grid_position: 'VWCWRI,YATXSR RPMYOH,SCMPOW'}
+    layout_properties: {grid_position: 'RPMYOH,SCMPOW'}
+  - name: label_4
+    properties: {text: Contact email}
+    type: Label
+    layout_properties: {grid_position: ''}
   - name: email_box
     properties: {}
     type: TextBox
-    layout_properties: {grid_position: 'VWCWRI,YATXSR NXHONY,BBVYJH'}
+    layout_properties: {grid_position: 'NXHONY,BBVYJH'}
   - name: label_3
     properties: {text: Message}
     type: Label
