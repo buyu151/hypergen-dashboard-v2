@@ -10,6 +10,11 @@ components:
   name: button_1
   layout_properties: {grid_position: 'IPTSVM,WDWWFI'}
   event_bindings: {click: button_1_click}
+- name: label_2
+  properties: {text: Hypergen Micro Gast Turbine (HMGT) - Smart comparison tool.,
+    align: center, bold: true}
+  type: Label
+  layout_properties: {grid_position: 'JSKYMA,RFXDFC'}
 - name: button_2
   properties: {text: 'Interested? Contact us by clicking here'}
   type: Button
